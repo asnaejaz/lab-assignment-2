@@ -1,0 +1,47 @@
+public class School{
+
+	private String name;
+	private String address;
+	Classroom classes[];
+	Principal principal;
+
+	School(String name, String address, Principal principal, Classroom classes[]){
+		this.name=name;
+		this.address=address;
+		this.principal=principal;
+		this.classes=classes;
+	}
+
+	public void setName(String name){
+		this.name=name;
+	}
+
+	public String getName(){
+		return name;
+	}
+
+	public void setAddress(String address){
+		this.address=address;
+	}
+
+	public String getAddress(){
+		return address;
+	}
+
+	public void setPrincipal(Principal principal){
+		this.principal=principal;
+	}
+
+	@Override
+    	public String toString() {
+        	StringBuilder sb = new StringBuilder();
+        	sb.append("School Name: " + name + "\n");
+        	sb.append("Address: " + address + "\n");
+        	sb.append("Principal: " + principal.getName() + "\n");
+        	sb.append("Classrooms:\n");
+        	for (Classroom classroom : classes) {
+                	sb.append(classroom.toString() + "\n");
+        	}
+        return sb.toString();
+    }
+}
