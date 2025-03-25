@@ -1,0 +1,21 @@
+public class Principal extends Person{
+
+	private int experienceInYears;
+
+	Principal(String name, int age, int experienceInYears){
+		super(name, age);
+		this.experienceInYears=experienceInYears;
+	}
+
+	public void setExperienceInYears(int experienceInYears){
+		this.experienceInYears=experienceInYears;
+	}
+
+	public int getExperienceInYears(){
+		return experienceInYears;
+	}
+
+	public String toString(){
+		return String.format("Principal details:\n %s\n Experience In Years: %d\n",super.toString(),experienceInYears);
+	}
+}
