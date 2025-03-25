@@ -1,0 +1,59 @@
+public class Classroom{
+
+	private String className;
+	private String classCode;
+	private Teacher teacher;
+	private Student[] students;
+	private int studentCount=0;
+
+	public Classroom(String className, String classCode, Teacher teacher, int maxStudents){
+		this.className=className;
+		this.classCode=classCode;
+		this.teacher=teacher;
+		this.students= new Student[maxStudents];
+	}
+
+	public boolean addStudent(Student student) {
+        	if (studentCount < students.length) {
+            		students[studentCount++] = student; 
+            		return true;
+        	}
+        	return false; 
+    	}
+
+	public void setClassName(String className){
+		this.className=className;
+	}
+
+	public String getClassName(){
+		return className;
+	}
+
+	public String setClassName(){
+		return className;
+	}
+
+	public void setClassCode(String classCode){
+		this.classCode=classCode;
+	}
+
+	public String setClassCode(){
+		return classCode;
+	}
+
+	public void setTeacher(Teacher teacher){
+		this.teacher=teacher;
+	}
+
+	@Override
+   	public String toString() {
+        	StringBuilder sb = new StringBuilder();
+        	sb.append("Classroom: " + className + " (" + classCode + ")\n");
+        	sb.append("Teacher: " + teacher.getName() + "\n");
+        	sb.append("Students:\n");
+        	for (int i = 0; i < studentCount; i++) {
+            		sb.append("  " + students[i].getName() + " (" + students[i].getRollNo() + ")\n");
+        	}
+        	return sb.toString();
+    	}
+}
