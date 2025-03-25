@@ -1,0 +1,50 @@
+public class Main{
+
+	public static void main(String args[]){
+
+		Principal principal=new Principal("Sultana Siddique",59,34);
+
+		Teacher teacher[]=new Teacher[2];
+		teacher[0]=new Teacher("Hamna Talib",29,"June24-001","English \nMath \nUrdu");
+		teacher[1]=new Teacher("Anya Ali",32,"May19-078","English \nMath \nUrdu");
+		
+		Student students[]=new Student[11];
+		students[0] = new Student("Alli", 16, "A113");
+		students[1] = new Student("Alice", 15, "A101");
+        	students[2] = new Student("Bob", 15, "A102");
+        	students[3] = new Student("Charlie", 16, "B111");
+        	students[4] = new Student("David", 16, "A112");
+        	students[5] = new Student("Eve", 15, "A103");
+        	students[6] = new Student("Frank", 16, "B114");
+		students[7] = new Student("Jhon", 14, "C123");
+		students[8] = new Student("Kale", 13, "B116");
+		students[9] = new Student("Jamie", 15, "B118");
+		students[10] = new Student("Franklin", 17, "B119");
+		
+		
+		Classroom classes[]=new Classroom[2];
+		classes[0]=new Classroom("Nursery Red","R1",teacher[0],5);
+		classes[1]=new Classroom("Nursery Silver","S1",teacher[1],5);
+
+		School school=new School("Beaconhouse School System","Liberty Campus,Lahore",principal,classes);
+
+		classes[0].addStudent(students[0]);
+		classes[0].addStudent(students[1]);
+		classes[0].addStudent(students[2]);
+		classes[0].addStudent(students[4]);
+		classes[0].addStudent(students[5]);
+		classes[1].addStudent(students[3]);
+		classes[1].addStudent(students[6]);
+		classes[1].addStudent(students[8]);
+		classes[1].addStudent(students[9]);
+		classes[1].addStudent(students[10]);
+
+		System.out.println(school);
+
+		if (!classes[1].addStudent(students[7])) {
+            		System.out.println("Class " + classes[1].getClassName() + " is full. ");
+        	}
+
+	}
+
+}
