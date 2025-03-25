@@ -1,0 +1,30 @@
+public class Teacher extends Person{
+
+	private static String teacherID;
+	private String subject;
+
+	public Teacher(String name, int age, String teacherID, String subject){
+		super(name,age);
+		this.teacherID=teacherID;
+		this.subject=subject;
+	}
+
+	public void setSubject(String subject){
+		this.subject=subject;
+	}
+
+	public String getSubject(){
+		return subject;
+	}
+
+	public String toString(){
+		return String.format("Teachers Details:\n %s\n Teacher ID: %s\n %s\n Subject:",super.toString(), teacherID, subject);
+	}
+
+	@Override
+	public boolean equals(Object obj){
+		Teacher other = (Teacher) obj;
+		return this.teacherID.equals(other.teacherID);
+	}
+
+}
